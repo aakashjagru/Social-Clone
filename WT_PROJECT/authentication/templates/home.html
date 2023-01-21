@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block tittle %}
+    HOME
+{% endblock %}
+    
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+<img style="width: 100%; height:650px;" src="{% static '/merakist-CNbRsQj8mHQ-unsplash.jpg' %}" alt="">
+<h2 style="text-align: center;">Welcome {{user.username}} To Social Website</h2>
+<p style="text-align: center;">Use NavBar To <a href="{% url 'posts:all' %}">Start</a> Today With Us</p>
+{% else %}
+<h2 style="text-align: center;">Login or SignUp to continue</h2>
+{% endif %}
+    
+
+    
+    
+
+        
+    
+{% endblock content %}
+    

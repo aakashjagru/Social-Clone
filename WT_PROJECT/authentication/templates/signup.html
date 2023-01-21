@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+{% block tittle %}
+SIGN UP
+{% endblock %}
+
+{% block content %}
+<h1 style="margin-left:300px;">SIGN UP PAGE</h1>
+<div class="shadow p-4 mb-5 bg-body rounded" style="width: 600px; margin-left:150px;">
+    <form method="POST" novalidate action="{% url 'signup' %}">
+        {% csrf_token %}
+        {{form|crispy}}
+
+        <input type="submit" name='User Create'>
+    </form>
+</div>
+
+<!-- <div class="container">
+<form method="POST">
+    {% csrf_token %}
+    
+    {% for feild in form %}
+        <br>
+        {{feild.label}}
+        <br>
+        {{feild}}
+    {% endfor %}
+    <br>
+    <br>
+    <input type="submit" name='SIGNUP'>
+    
+    </form>
+</div> -->
+{% endblock content %}
